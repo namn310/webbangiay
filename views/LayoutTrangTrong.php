@@ -82,9 +82,10 @@
                 <div class="article"> <a href="index.php?controller=news_detail&id=20" class="image"> <img src="assets/upload/news/1714546232_h5-1-1587114514-3059-1587115493.jpg" alt="Mua Macbook và Macbook Air Plus chính hãng ở đâu?" title="Mua Macbook và Macbook Air Plus chính hãng ở đâu?" class="img-responsive"> </a>
                   <div class="info">
                     <h3><a href="index.php?controller=news_detail&id=20">Mua giày chính hãng ở đâu?</a></h3>
-                    <p class="desc">
+                    <p class="desc"> 
+                      
                     <p>Hiện nay có rất nhiều các cửa hàng bán giày khiến khách hàng khó khăn trong việc lựa chọn các cơ sở uy tín để mua hàng...</p>
-                    </p>
+                    </p> 
                   </div>
                 </div>
               </div>
