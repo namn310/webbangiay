@@ -79,61 +79,43 @@
             <div class="owl-home-blog owl-home-blog-sidebar"> 
               <!-- list hot news -->
               <div class="item">
-                <div class="article"> <a href="index.php?controller=news_detail&id=20" class="image"> <img src="assets/frontend/images/anhbia.jpg" alt="Mua Macbook và Macbook Air Plus chính hãng ở đâu?" title="Mua Macbook và Macbook Air Plus chính hãng ở đâu?" class="img-responsive"> </a>
+                <div class="article"> <a href="index.php?controller=news_detail&id=20" class="image"> <img src="assets/upload/news/1714546232_h5-1-1587114514-3059-1587115493.jpg" alt="Mua Macbook và Macbook Air Plus chính hãng ở đâu?" title="Mua Macbook và Macbook Air Plus chính hãng ở đâu?" class="img-responsive"> </a>
                   <div class="info">
-                    <h3><a href="index.php?controller=news_detail&id=20">Mua Macbook và Macbook Air Plus chính hãng ở đâu?</a></h3>
+                    <h3><a href="index.php?controller=news_detail&id=20">Mua giày chính hãng ở đâu?</a></h3>
                     <p class="desc">
-                    <p>X-37B c&oacute; thể triển khai như vũ kh&iacute; ti&ecirc;u diệt vệ tinh của đối phương, hoặc thả vũ kh&iacute; động năng đến bất kỳ vị tr&iacute; n&agrave;o tr&ecirc;n Tr&aacute;i Đất.</p>
+                    <p>Hiện nay có rất nhiều các cửa hàng bán giày khiến khách hàng khó khăn trong việc lựa chọn các cơ sở uy tín để mua hàng...</p>
                     </p>
                   </div>
                 </div>
               </div>
               <!-- end list hot news --> 
               <!-- list hot news -->
-              <div class="article"> <a href="index.php?controller=news_detail&id=20" class="image"> <img src="assets/frontend/images/anhbia.jpg" alt="Mua Macbook và Macbook Air Plus chính hãng ở đâu?" title="Mua Macbook và Macbook Air Plus chính hãng ở đâu?" class="img-responsive"> </a>
+              <div class="article"> <a href="index.php?controller=news_detail&id=20" class="image"> <img src="assets/upload/news/1714546085_giayphanhuysinhhccopy-16608771-6857-8152-1660877687.jpg" alt="Mua Macbook và Macbook Air Plus chính hãng ở đâu?" title="Mua Macbook và Macbook Air Plus chính hãng ở đâu?" class="img-responsive"> </a>
                   <div class="info">
-                    <h3><a href="index.php?controller=news_detail&id=20">Mua Macbook và Macbook Air Plus chính hãng ở đâu?</a></h3>
+                    <h3><a href="index.php?controller=news_detail&id=20">Trung Quốc phát triển giày sinh học</a></h3>
                     <p class="desc">
-                    <p>X-37B c&oacute; thể triển khai như vũ kh&iacute; ti&ecirc;u diệt vệ tinh của đối phương, hoặc thả vũ kh&iacute; động năng đến bất kỳ vị tr&iacute; n&agrave;o tr&ecirc;n Tr&aacute;i Đất.</p>
+                    <p>Gần đây Trung Quốc đã đưa ra mẫu giày sinh học được làm từ các nguyên liệu gần gũi và thân thiện với thiên nhiên cũng như dễ dàng phân hủy...</p>
                     </p>
                   </div>
                 </div>
-              <!-- end list hot news --> 
-              <!-- list hot news -->
-              <div class="item">
-                <div class="article"> <a href="index.php?controller=news_detail&id=17" class="image"> <img src="assets/frontend/images/anhbia.jpg" alt="Mua iPhone 6s và iPhone 6s Plus chính hãng ở đâu?" title="Mua iPhone 6s và iPhone 6s Plus chính hãng ở đâu?" class="img-responsive"> </a>
-                  <div class="info">
-                    <h3><a href="index.php?controller=news_detail&id=17">Samsung và Oppo tiếp tục thống trị thị trường đầu năm 2017 tại Việt Nam</a></h3>
-                    <p class="desc">
-                    <p>(D&acirc;n tr&iacute;) - Hầu hết c&aacute;c sản phẩm nằm trong top 10 b&aacute;n chạy th&aacute;ng 2 v&agrave; nửa đầu th&aacute;ng 3 năm 2017 của c&aacute;c nh&agrave; b&aacute;n lẻ đều đến từ Samsung v&agrave; Oppo. C&aacute;c thương hiệu lớn kh&aacute;c dần dần bị thụt l&ugrave;i về sau...</p>
-                    </p>
-                  </div>
-                </div>
-              </div>
               <!-- end list hot news --> 
               <!-- list hot news -->
               <div class="item">
-                <div class="article"> <a href="index.php?controller=news_detail&id=16" class="image"> <img src="assets/frontend/images/anhbia.jpg" alt="Mua iPhone 6s và iPhone 6s Plus chính hãng ở đâu?" title="Mua iPhone 6s và iPhone 6s Plus chính hãng ở đâu?" class="img-responsive"> </a>
+                <div class="article"> <a href="index.php?controller=news_detail&id=17" class="image"> <img src="assets/upload/news/1714546154_giay1-1648350252-1648350286-9650-1648351426.jpg" alt="Mua iPhone 6s và iPhone 6s Plus chính hãng ở đâu?" title="Mua iPhone 6s và iPhone 6s Plus chính hãng ở đâu?" class="img-responsive"> </a>
                   <div class="info">
-                    <h3><a href="index.php?controller=news_detail&id=16">Những dấu hiệu cho thấy chiếc tủ lạnh nhà bạn đang gặp vấn đề</a></h3>
+                    <h3><a href="index.php?controller=news_detail&id=17">Các mẫu giày trẻ em hot </a></h3>
                     <p class="desc">
-                    <p>(D&acirc;n tr&iacute;) - Mặc d&ugrave; l&agrave; một thiết bị điện tử với độ bền cao, thậm ch&iacute; c&oacute; thể l&ecirc;n tới 10-20 năm, nhưng điều đ&oacute; kh&ocirc;ng c&oacute; nghĩa l&agrave; tủ lạnh kh&ocirc;ng thể hỏng h&oacute;c hay gặp sự cố.</p>
+                    <p>Hiện nay có rất nhiều mẫu giày trẻ em hot phù hợp với mọi lựa tuổi với kiểu dáng đa dạng giúp các bậc phụ huynh thoải mái lựa chọn</p>
                     </p>
                   </div>
                 </div>
               </div>
               <!-- end list hot news --> 
               <!-- list hot news -->
-              <div class="item">
-                <div class="article"> <a href="index.php?controller=news_detail&id=15" class="image"> <img src="assets/frontend/images/anhbia.jpg" alt="Mua iPhone 6s và iPhone 6s Plus chính hãng ở đâu?" title="Mua iPhone 6s và iPhone 6s Plus chính hãng ở đâu?" class="img-responsive"> </a>
-                  <div class="info">
-                    <h3><a href="index.php?controller=news_detail&id=15">Oppo khởi chạy chương trình đặt hàng trước F3 Plus tại Việt Nam</a></h3>
-                    <p class="desc">
-                    <p>Sau ng&agrave;y ra mắt ch&iacute;nh thức v&agrave;o 23/3 tới, Oppo sẽ tiến h&agrave;nh chương tr&igrave;nh đặt h&agrave;ng trước F3 Plus từ ng&agrave;y 24/3 đến hết ng&agrave;y 31/3/2017, kh&aacute;ch h&agrave;ng đặt mua trước sản phẩm F3 Plus sẽ nhận được bộ qu&agrave; tặng d&agrave;nh hấp dẫn.</p>
-                    </p>
-                  </div>
-                </div>
-              </div>
+              
+              <!-- end list hot news --> 
+              <!-- list hot news -->
+             
               <!-- end list hot news --> 
             </div>
           </div>

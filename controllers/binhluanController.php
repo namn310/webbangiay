@@ -104,7 +104,7 @@ if(!isset($_SESSION["customer_email"])){
     <?php
     //show bình luận
     $idsp=$_GET['idsp'];
-    $sql="SELECT noidung,name,postdate FROM comment WHERE comment.idsp=$idsp ORDER BY id DESC";
+    $sql="SELECT id,noidung,name,postdate FROM comment WHERE comment.idsp=$idsp ORDER BY id DESC";
     $conn = Connection::getInstance();
     $stmt=$conn->prepare($sql);
     $stmt->execute();
@@ -126,8 +126,7 @@ if(!isset($_SESSION["customer_email"])){
         <span style="font-weight:bold;font-size:15px;color:blue" class="user-name"><?php echo $bl['name']?></span>
         <span style="font-weight:lighter" class="comment-time">/<?php echo $bl['postdate']?></span>
         <div style="margin-left:40px"class="noidung"><?php echo $bl['noidung']?></div>
-
-        <!--
+        <div><?php echo $bl['id'] ?></div>
         <div class="reply">
             <button id="reply" style="float:right">Trả lời</button>
         </div>
@@ -135,14 +134,15 @@ if(!isset($_SESSION["customer_email"])){
         <form method="submit">
         <textarea placeholder="comment" name="comment-reply"style="display:none;width:100%;height:auto;margin-top:7px;resize:none" id="reply-box" ></textarea>
         </form>
-        -->
+        
         <br>
         <hr>
      </div> 
      </div>
      </div>
        <?php 
-        }
+        } 
+        
         ?>
  </div>
 <script >
