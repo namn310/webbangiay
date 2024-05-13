@@ -83,7 +83,6 @@
                   <div class="info">
                     <h3><a href="index.php?controller=news_detail&id=20">Mua giày chính hãng ở đâu?</a></h3>
                     <p class="desc"> 
-                      
                     <p>Hiện nay có rất nhiều các cửa hàng bán giày khiến khách hàng khó khăn trong việc lựa chọn các cơ sở uy tín để mua hàng...</p>
                     </p> 
                   </div>
