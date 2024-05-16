@@ -126,14 +126,6 @@ if(!isset($_SESSION["customer_email"])){
         <span style="font-weight:bold;font-size:15px;color:blue" class="user-name"><?php echo $bl['name']?></span>
         <span style="font-weight:lighter" class="comment-time">/<?php echo $bl['postdate']?></span>
         <div style="margin-left:40px"class="noidung"><?php echo $bl['noidung']?></div>
-        <div><?php echo $bl['id'] ?></div>
-        <div class="reply">
-            <button id="reply" style="float:right">Trả lời</button>
-        </div>
-        <br>
-        <form method="submit">
-        <textarea placeholder="comment" name="comment-reply"style="display:none;width:100%;height:auto;margin-top:7px;resize:none" id="reply-box" ></textarea>
-        </form>
         
         <br>
         <hr>
