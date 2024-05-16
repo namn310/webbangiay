@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 12, 2024 lúc 01:50 PM
+-- Thời gian đã tạo: Th5 16, 2024 lúc 11:27 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -99,7 +99,14 @@ INSERT INTO `comment` (`id`, `name`, `iduser`, `idsp`, `noidung`, `postdate`) VA
 (20, 'user@gmail.com', 19, 60, 'ffff', '12-May-2024'),
 (21, 'user@gmail.com', 19, 60, 'fffffw', '12-May-2024'),
 (22, 'user@gmail.com', 19, 60, 'ffff', '12-May-2024'),
-(23, 'user@gmail.com', 19, 38, 'ddd', '12-May-2024');
+(23, 'user@gmail.com', 19, 38, 'ddd', '12-May-2024'),
+(24, 'user@gmail.com', 19, 7, 'gsegd', '12-May-2024'),
+(25, 'user@gmail.com', 19, 7, 'dd', '12-May-2024'),
+(26, 'user@gmail.com', 19, 56, 'f', '12-May-2024'),
+(27, 'user@gmail.com', 19, 56, 'ffff', '12-May-2024'),
+(28, 'user@gmail.com', 19, 56, 'fff', '12-May-2024'),
+(29, 'user@gmail.com', 19, 56, 'ddd', '12-May-2024'),
+(30, 'user@gmail.com', 19, 8, 'ffff', '16-May-2024');
 
 -- --------------------------------------------------------
 
@@ -404,7 +411,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `customers`
