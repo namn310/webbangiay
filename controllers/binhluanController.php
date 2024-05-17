@@ -30,6 +30,9 @@ include "../models/binhluanModel.php";
             addComment($name,$iduser,$product_id,$noidung,$date);
         }
        // $listcomment=showbinhluan();
+       if(!isset($_SESSION["customer_email"])){
+        echo"<a href='../index.php?controller=account&action=login' target='_parent'>Bạn vui lòng đăng nhập để có thể bình luận</a>";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,28 +42,35 @@ include "../models/binhluanModel.php";
     <title>Comment</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        $(document).ready(function(){
+           
+        })
+    </script>
 </head>
-<body style="width:100%;overflow-y:hidden">
-    <form id="comment_form" method="post" style="width:100%">
+<body >
+<div class="comment-form" style="width:100%;overflow-y:hidden">
+    <form id="comment_form"  method="post" style="width:100%">
         <input type="text" hidden name="name" value="<?php echo $user?>">
         <input type="hidden" name="idsp" value="<?php $_GET['idsp'] ?>">
         <input placeholder="Nhập bình luận của bạn ..." name="noidung" required id="noidung" style=" width:100%;min-height:100px;resize:none;
         border-radius:4px">
         <input class="btn btn-primary" id="guibinhluan" style="margin-top:10px" type="submit" value="Gửi bình luận" name="guibinhluan">
     </form>
-    <?php
-if(!isset($_SESSION["customer_email"])){
-    echo"<a href='../index.php' target='_parent'>Bạn vui lòng đăng nhập để có thể bình luận</a>";
-}
-
-?>
-    
+   <p id="username" hidden><?php echo $user ?></p>
     <script>
         //load bình luận
         $(document).ready(function(){
+            $("#reply").click(function(){
+            $("#reply-box").toggle();
+        })
             $("#guibinhluan").load("../controllers/binhluanController.php");
+            if($("#username").text()===""){
+                $(".comment-form").hide();
+            }
         })
     </script>
+    
     <!-- dung ajax để load bình luận 
     
 <script type="text/javascript">
@@ -101,6 +111,7 @@ if(!isset($_SESSION["customer_email"])){
     });
 </script>
 -->
+
     <?php
     //show bình luận
     $idsp=$_GET['idsp'];
@@ -136,6 +147,7 @@ if(!isset($_SESSION["customer_email"])){
         } 
         
         ?>
+ </div>
  </div>
 <script >
     $(document).ready(function(){

@@ -1,10 +1,12 @@
 <?php
+
 // add comment
 function addComment($name,$iduser,$idsp,$noidung,$date){
     $sql="INSERT INTO comment(name,iduser,idsp,noidung,postdate) VALUES ('$name','$iduser','$idsp','$noidung','$date')";
     $conn = Connection::getInstance();
     $conn->exec($sql);
  }
+
 /*add commentChild
  function addCommentChild($id_parent,$name,$iduser,$idsp,$noidung,$date){
     $sql="INSERT INTO comment(id_parent,name,iduser,idsp,noidung,postdate) VALUES ('$id_parent','$name','$iduser','$idsp','$noidung','$date')";

@@ -139,7 +139,6 @@
   <?php echo $record->content; ?>
 </div>
 <div class="comment">
-
   <h3>Bình luận</h3>
   <iframe src="controllers/binhluanController.php?idsp=<?php echo $_GET['id']?>" width="100%" height="400px" frameborder="0"></iframe>
 </div>
