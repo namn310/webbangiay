@@ -8,13 +8,15 @@ include "../models/binhluanModel.php";
  function showbinhluan(){
     $sql="SELECT * FROM comment ORDER BY id_comment DESC";
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt=$conn->prepare($sql);
+    $stmt=$conn->prepare($sql);x
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
     return $stmt->fetchAll();
 }*/
+    
     if(isset($_SESSION["customer_email"])&&($_SESSION["customer_email"]!="")){
         $user=$_SESSION["customer_email"];
+        
         
     }
         else{
@@ -25,7 +27,7 @@ include "../models/binhluanModel.php";
             $noidung=$_POST['noidung'];
             $product_id=$_GET['idsp'];
             $iduser=$_SESSION["customer_id"];
-            $date=date('d-M-Y');
+            $date=date('d-m-Y');
             //
             addComment($name,$iduser,$product_id,$noidung,$date);
         }
@@ -58,6 +60,21 @@ include "../models/binhluanModel.php";
         <input class="btn btn-primary" id="guibinhluan" style="margin-top:10px" type="submit" value="Gửi bình luận" name="guibinhluan">
     </form>
    <p id="username" hidden><?php echo $user ?></p>
+   <?php
+   /*
+    $conn = Connection::getInstance();
+   $query="SELECT comment.name,customers.email FROM customers,comment WHERE comment.name===customers.email";
+   $stmt=$conn->prepare($sql);
+   $stmt->execute();
+   $stmt->setFetchMode(PDO::FETCH_ASSOC);
+   $row=$stmt->fetchAll();
+   foreach($row as $nam){
+    ?>
+    <p><?php echo($nam['customers.email']); ?></p>
+    <?php
+   }
+   */
+   ?>
     <script>
         //load bình luận
         $(document).ready(function(){
@@ -115,7 +132,7 @@ include "../models/binhluanModel.php";
     <?php
     //show bình luận
     $idsp=$_GET['idsp'];
-    $sql="SELECT id,noidung,name,postdate FROM comment WHERE comment.idsp=$idsp ORDER BY id DESC";
+    $sql="SELECT comment.id,noidung,comment.name,postdate,customers.name FROM comment,customers WHERE comment.idsp=$idsp AND comment.name=customers.email  ORDER BY id DESC ";
     $conn = Connection::getInstance();
     $stmt=$conn->prepare($sql);
     $stmt->execute();
@@ -127,13 +144,14 @@ include "../models/binhluanModel.php";
         foreach($row as $bl){
             //echo $bl['name'].' - '.$bl['noidung']."<br>";
             ?>
-     <div class="list-comment"  width="100%">
+     <div class="list-comment" style="background-color:#EEEEEE"  width="100%">
+     
         <div class="row">
             <div class="col-sm-2 col-sm-3">
-                <img style="width:50px;height:50px" class="img-fluid" src="avt1.jpg">
+                <img style="width:50px;height:50px;margin-left:40px;margin-top:10px;border-radius:20px" class="img-fluid rounded text-center" src="avt1.jpg">
             </div>
             
-            <div class="col-sm-10 col-sm-9">
+            <div class="col-sm-10 col-sm-9" style="margin-bottom:20px;box-shadow: 2px 2px 2px gray;margin-top:10px;background-color:#FFFFFF;border-radius:10px">
         <span style="font-weight:bold;font-size:15px;color:blue" class="user-name"><?php echo $bl['name']?></span>
         <span style="font-weight:lighter" class="comment-time">/<?php echo $bl['postdate']?></span>
         <div style="margin-left:40px"class="noidung"><?php echo $bl['noidung']?></div>
