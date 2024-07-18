@@ -38,7 +38,7 @@
 		//xoa toan bo gio hang
 		public function destroy(){
 			//goi ham cartDestroy de xoa gio hang
-			$this->cartDestroy($id);
+			$this->cartDestroy();
 			//quay tro lai trang gio hang
 			header("location:index.php?controller=cart");
 		}

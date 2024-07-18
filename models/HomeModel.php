@@ -35,5 +35,8 @@
 			$result = $query->fetchAll();
 			return $result;
 		}
+		public function SaveVoucher($id){
+
+		}
 	}
  ?>
