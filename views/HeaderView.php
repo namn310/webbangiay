@@ -3,12 +3,12 @@
   <div class="top-header" style="background-color: black;color:white">
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6"> <span><i class="fa fa-phone"></i>0987654321</span> <span><i class="fa fa-envelope-o"></i> <a style="color:white" href="mailto:Tonykieu2k@mail.com">user@gmail.com</a></span> </div>
+        <div class="col-xs-12 col-sm-6 col-md-6"> <span><i class="fa fa-phone"></i>0987654321</span> <span><i class="fa fa-envelope-o"></i> <a style="color:white;text-decoration:none;color:white" href="mailto:Tonykieu2k@mail.com">user@gmail.com</a></span> </div>
         <div class="col-xs-12 col-sm-6 col-md-6 customer">
           <?php if (isset($_SESSION["customer_email"]) == false) : ?>
-            <span><i class="fa fa-user">&nbsp;</i><a style="color:white" href="index.php?controller=account&action=login">Đăng nhập</a></span>&nbsp; &nbsp;<span><i class="fa fa-user-plus"></i>&nbsp;<a style="color:white" href="index.php?controller=account&action=register">Đăng ký</a></span>
+            <span><i class="fa fa-user">&nbsp;</i><a style="color:white;text-decoration:none;color:white" href="index.php?controller=account&action=login">Đăng nhập</a></span>&nbsp; &nbsp;<span><i class="fa fa-user-plus"></i>&nbsp;<a style="color:white;text-decoration:none;color:white" href="index.php?controller=account&action=register">Đăng ký</a></span>
           <?php else : ?>
-            <a href="#">Xin chào <?php echo $_SESSION["customer_email"]; ?></a>&nbsp; &nbsp;<a href="index.php?controller=account&action=logout">Đăng xuất</a>
+            <a style="color:white;text-decoration:none;color:white" href="#">Xin chào <?php echo $_SESSION["customer_email"]; ?></a>&nbsp; &nbsp;<a style="color:white;text-decoration:none;color:white" href="index.php?controller=account&action=logout">Đăng xuất</a>
           <?php endif; ?>
         </div>
       </div>

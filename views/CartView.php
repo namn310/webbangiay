@@ -74,8 +74,8 @@ $this->layoutPath = "LayoutTrangTrong.php";
         </div>
         <div class="offcanvas-body">
           <?php foreach ($data as $row) : ?>
-            <div class="voucher d-flex align-items-center p-2 mb-2" style="width:100%;border:1px solid red;height:170px;border-radius:8px;background-color:#FFCCCC">
-              <div id="icon" style="font-size:25px"><i class="fa-solid fa-ticket fa-2xl" style="color:#e00b0b"></i></div>
+            <div class="voucher d-flex align-items-center p-2 mb-2" style="width:100%;border:1px solid red;height:180px;border-radius:8px;background-color:#FFCCCC">
+              <div id="icon" style="font-size:40px"><i class="fa-solid fa-ticket fa-2xl" style="color:#e00b0b"></i></div>
               <div id="voucherDetail" class="ms-4">
                 <form method="post" action="index.php?controller=cart&action=useVoucher&voucher=<?php echo $row->idVoucher ?>">
                   <input hidden value="<?php echo $this->getDiscountCountCon($row->idVoucher) ?>" name="CountCon">
@@ -84,12 +84,12 @@ $this->layoutPath = "LayoutTrangTrong.php";
                   <b>
                     <p class="text-danger text-start" style="font-size:20px"><?php echo $this->getMa($row->idVoucher) ?></p>
                   </b>
-                  <p class="text-danger text-start" style="font-size:20px"> Giảm <?php echo $this->getDiscountVoucher($row->idVoucher) ?>%</p>
+                  <p class="text-danger text-start" style="font-size:15px"> Giảm <?php echo $this->getDiscountVoucher($row->idVoucher) ?>%</p>
                   <?php if ($this->getDiscountOrderCon($row->idVoucher) != '') : ?>
-                    <p style="font-size:20px" class="text-danger text-start">Cho đơn hàng từ <?php echo $this->getDiscountOrderCon($row->idVoucher) ?>đ</p>
+                    <p style="font-size:15px" class="text-danger text-start">Cho đơn hàng từ <?php echo $this->getDiscountOrderCon($row->idVoucher) ?>đ</p>
                   <?php endif ?>
                   <?php if ($this->getDiscountCountCon($row->idVoucher) != '') : ?>
-                    <p style="font-size:20px" class="text-danger text-start">Áp dụng khi mua <?php echo $this->getDiscountCountCon($row->idVoucher) ?> trở lên</p>
+                    <p style="font-size:15px" class="text-danger text-start">Áp dụng khi mua <?php echo $this->getDiscountCountCon($row->idVoucher) ?> trở lên</p>
                   <?php endif ?>
                   <button type="submit" style="font-size:16px" class="btn btn-danger">Sử dụng</button>
                   <span class="ms-3 text-danger" style="">x<?php echo $row->soluong ?></span>

@@ -78,7 +78,7 @@
                   <input type="number" min="0" value="0" id="toPrice" class="form-control" />
                 </li>
                 <li class="list-group-item" style="border:0px; text-align:center">
-                  <input style="background-color: black;" type="button" class="btn btn-warning" value="Tìm mức giá" onclick="location.href = 'index.php?controller=search&fromPrice=' + document.getElementById('fromPrice').value + '&toPrice=' + document.getElementById('toPrice').value;" />
+                  <input style="background-color: black;color:white" type="button" class="btn btn-warning" value="Tìm mức giá" onclick="location.href = 'index.php?controller=search&fromPrice=' + document.getElementById('fromPrice').value + '&toPrice=' + document.getElementById('toPrice').value;" />
                 </li>
               </ul>
             </div>
