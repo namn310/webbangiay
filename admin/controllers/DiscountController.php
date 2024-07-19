@@ -12,6 +12,18 @@ class DiscountController extends Controller
         $numPage = ceil($this->modelTotal() / $recordPerPage);
         //lay danh sach cac ban ghi co phan trang
         $data = $this->modelRead($recordPerPage);
+        $conn = Connection::getInstance();
+        $query = $conn->query("select * from discount");
+        foreach ($query->fetchAll() as $row) {
+            $now = new DateTime();
+            $timeend = new DateTime($row->dateEnd);
+            $timestart = new DateTime($row->dateStart);
+            if ($now > $timeend || $now < $timestart) {
+                $this->outDateDiscount($row->id);
+            } else {
+                $this->resetDiscount($row->id);
+            }
+        }
         //goi view, truyen du lieu ra view
         $this->loadView('DiscountView.php', ["data" => $data, "numPage" => $numPage]);
     }
@@ -36,7 +48,7 @@ class DiscountController extends Controller
         $query = $conn->query("select idCat from discount where id=$id");
         $row = $query->fetchAll();
         foreach ($row as $a) {
-            $idCat= $a->idCat;
+            $idCat = $a->idCat;
         }
         $query2 = $conn->prepare("update products set discount=:discount where category_id=:cat");
         $query2->execute([":discount" => ' ', ":cat" => $idCat]);

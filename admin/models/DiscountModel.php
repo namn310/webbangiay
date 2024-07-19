@@ -95,4 +95,21 @@ trait DiscountModel
         //tra ve mot ban ghi
         return $query->fetchAll();
     }
+    public function outDateDiscount($id)
+    {
+        $conn = Connection::getInstance();
+        $query = $conn->query("select idCat from discount where id=$id");
+        $row = $query->fetchAll();
+        foreach ($row as $a) {
+            $idCat = $a->idCat;
+        }
+        $query2 = $conn->prepare("update products set discount=:discount where category_id=:cat");
+        $query2->execute([":discount" => ' ', ":cat" => $idCat]);
+        $conn->query("update discount set status=0 where id=$id");
+    }
+    public function resetDiscount($id)
+    {
+        $conn = Connection::getInstance();
+        $conn->query("update discount set status=1 where id=$id");
+    }
 }

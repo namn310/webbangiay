@@ -3,15 +3,15 @@
 <div class="col-md-12">
     <div style="margin-bottom:5px;">
         <input onclick="history.go(-1);" type="button" value="Back" class="btn btn-danger">
-    </div>    
+    </div>
     <div class="panel panel-primary">
         <div class="panel-heading">Orders detail</div>
         <div class="panel-body">
             <!-- thong tin don hang -->
-            <?php 
-                $order = $this->modelGetOrders($id);
-                $customer = $this->modelGetCustomers($order->customer_id);
-             ?>
+            <?php
+            $order = $this->modelGetOrders($id);
+            $customer = $this->modelGetCustomers($order->customer_id);
+            ?>
             <table class="table">
                 <tr>
                     <th style="width: 100px;">Họ tên</th>
@@ -32,9 +32,9 @@
                 <tr>
                     <th style="width: 100px;">Trạng thái</th>
                     <td>
-                        <?php if($order->status == 0): ?>
+                        <?php if ($order->status == 0) : ?>
                             <span class="label label-danger">Chưa giao hàng</span>
-                        <?php else: ?>
+                        <?php else : ?>
                             <span class="label label-primary">Đã giao hàng</span>
                         <?php endif; ?>
                     </td>
@@ -48,19 +48,28 @@
                     <th>Price</th>
                     <th>Number</th>
                 </tr>
-                <?php foreach($data as $rows): ?>
-                    <?php 
-                        //lay ban ghi product tuong ung voi product_id
-                        $product = $this->modelGetProducts($rows->product_id);
-                     ?>
-                <tr>
-                    <td style="text-align: center;"><img src="../Assets/Upload/Products/<?php echo $product->photo; ?>" style="width:100px;"></td>
-                    <td><?php echo $product->name; ?></td>
-                    <td style="text-align: center;"><?php echo number_format($rows->price); ?></td>
-                    <td style="text-align: center;"><?php echo $rows->number; ?></td>
-                </tr>
+                <?php foreach ($data as $rows) : ?>
+                    <?php
+                    //lay ban ghi product tuong ung voi product_id
+                    $product = $this->modelGetProducts($rows->product_id);
+                    ?>
+                    <tr>
+                        <td style="text-align: center;"><img src="../Assets/Upload/Products/<?php echo $product->photo; ?>" style="width:100px;"></td>
+                        <td><?php echo $product->name; ?></td>
+                        <td style="text-align: center;"><?php echo number_format($rows->price); ?></td>
+                        <td style="text-align: center;"><?php echo $rows->number; ?></td>
+                    </tr>
                 <?php endforeach; ?>
-            </table>            
+            </table>
+            <?php if ($order->idVoucher > 0) : ?>
+                <div>
+                    <h4 style="float:right"><b>Voucher giảm <?php echo $this->getDiscountVoucher($order->idVoucher) ?> % </b></h4>
+                </div>
+            <?php endif ?>
+            <br>
+            <div>
+                <h3 style="float:right"><b>Thành tiền <?php echo number_format($order->total_cost) ?>đ </b></h3>
+            </div>
         </div>
     </div>
 </div>

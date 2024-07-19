@@ -53,7 +53,7 @@
             <ul class="pagination">
                 <li class="page-item">
                     <?php for($i = 1; $i <= $numPage; $i++): ?>
-                    <a href="index.php?controller=users&action=read&p=<?php echo $i; ?>" class="page-link"><?php echo $i; ?></a>
+                    <a href="index.php?controller=orders&page=<?php echo $i; ?>" class="page-link"><?php echo $i; ?></a>
                     <?php endfor; ?>
                 </li>
             </ul>

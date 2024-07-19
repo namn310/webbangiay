@@ -29,7 +29,7 @@ $this->layoutPath = 'Layout.php';
 
                         <td><?php echo $row->soluong ?></td>
                         <td>
-                            <?php if (is_int($row->dk_hoadon)) { ?>
+                            <?php if ($row->dk_hoadon != '') { ?>
                                 <p>Điều kiện hóa đơn tối thiểu <?php echo number_format($row->dk_hoadon) ?>đ</p>
                             <?php } else { ?>
                                 <p> <?php ($row->dk_hoadon) ?></p>
@@ -44,13 +44,16 @@ $this->layoutPath = 'Layout.php';
                         <td><?php echo $row->timeStart ?></td>
                         <td><?php echo $row->timeEnd ?></td>
                         <?php $now = new DateTime();
-                        if ($now <= $row->timeEnd) {
+                        $timeend = new DateTime($row->timeEnd);
+                        $timestart=new DateTime($row->timeStart);
+                        if ($now > $timeend) {
                         ?>
                             <td>Voucher đã hết hạn</td>
-                        <?php } else { ?>
+                        <?php } elseif($now < $timestart) { ?>
+                            <td>Voucher chưa khả dụng</td>
+                        <?php }else{ ?>
                             <td>Voucher đang khả dụng</td>
-                        <?php } ?>
-
+                            <?php } ?>
                         <td style="text-align:center;">
                             <a href="index.php?controller=voucher&action=update&id=<?php echo $row->id ?>">
                                 <img style="width: 18px" src="../assets/frontend/images/edit.png" alt="update">
@@ -72,7 +75,7 @@ $this->layoutPath = 'Layout.php';
             <ul class="pagination">
                 <li class="page-item disabled"><a href="#" class="page-link">Trang</a></li>
                 <?php for ($i = 1; $i <= $numPage; $i++) : ?>
-                    <li class="page-item"><a href="index.php?controller=discount&page=<?php echo $i; ?>" class="page-link"><?php echo $i; ?></a></li>
+                    <li class="page-item"><a href="index.php?controller=voucher&page=<?php echo $i; ?>" class="page-link"><?php echo $i; ?></a></li>
                 <?php endfor; ?>
             </ul>
         </div>

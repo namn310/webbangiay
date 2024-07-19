@@ -17,6 +17,7 @@ $this->layoutPath = 'Layout.php';
                     <th>Loại sản phẩm</th>
                     <th>Ngày bắt đầu</th>
                     <th>Ngày kết thúc</th>
+                    <th>Trạng thái</th>
                     <th>Chức năng</th>
                 </tr>
                 <?php foreach ($data as $row) : ?>
@@ -29,6 +30,17 @@ $this->layoutPath = 'Layout.php';
 
                         <td><?php echo $row->dateStart ?></td>
                         <td><?php echo $row->dateEnd ?></td>
+                        <?php $now = new DateTime();
+                        $timeend = new DateTime($row->dateEnd);
+                        $timestart = new DateTime($row->dateStart);
+                        if ($now > $timeend) {
+                        ?>
+                            <td>Chương trình đã kết thúc</td>
+                        <?php } elseif ($now < $timestart) { ?>
+                            <td>Chương trình chưa bắt đầu</td>
+                        <?php } else { ?>
+                            <td>Chương trình đang diễn ra</td>
+                        <?php } ?>
 
                         <td style="text-align:center;">
                             <a href="index.php?controller=discount&action=update&id=<?php echo $row->id ?>">

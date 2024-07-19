@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../assets/admin/layout1/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/admin/layout1/css/AdminLTE.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../assets/admin/layout1/css/_all-skins.min.css">
@@ -103,6 +104,11 @@
                             <i class="fa-solid fa-magnifying-glass-dollar"></i> <span>Quản lý nhà cung cấp</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="index.php?controller=shop">
+                            <i class="fa-solid fa-shop"></i> <span>Quản lý cửa hàng</span>
+                        </a>
+                    </li>
                     <li class="text-wrap">
                         <a href="index.php?controller=discount">
                             <i class="fa fa-th"></i> <span>Chương trình khuyến mại</span>
@@ -111,6 +117,11 @@
                     <li class="text-wrap">
                         <a href="index.php?controller=voucher">
                             <i class="fa-solid fa-tag"></i> <span>Mã giảm giá</span>
+                        </a>
+                    </li>
+                    <li class="text-wrap">
+                        <a href="index.php?controller=contact">
+                            <i class="fa-solid fa-phone"></i> <span>Quản lý liên hệ </span>
                         </a>
                     </li>
                     <li>

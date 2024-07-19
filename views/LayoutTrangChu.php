@@ -27,6 +27,14 @@
    <script src='assets/frontend/100/047/633/themes/517833/assets/bootstrap.min221b.js?1481775169361' type='text/javascript'></script>
    <script src='assets/frontend/assets/themes_support/api.jquerya87f.js?4' type='text/javascript'></script>
    <link href='assets/frontend/100/047/633/themes/517833/assets/bw-statistics-style221b.css?1481775169361' rel='stylesheet' type='text/css' />
+
+   <script src="
+    https://cdn.jsdelivr.net/npm/jquery-toast-plugin@1.3.2/dist/jquery.toast.min.js
+    "></script>
+   <link href="
+    https://cdn.jsdelivr.net/npm/jquery-toast-plugin@1.3.2/dist/jquery.toast.min.css
+    " rel="stylesheet">
+
    <!-- {{-- Slick carousel --}} -->
 
 

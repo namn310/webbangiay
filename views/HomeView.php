@@ -26,17 +26,34 @@ $this->layoutPath = "LayoutTrangChu.php";
   <h2 class="mb-2">Vouchers<h2>
       <div class="carouselVoucher">
         <?php foreach ($data as $row) : ?>
-          <div class="voucher d-flex align-items-center p-2 me-2" style="width:130px;border:1px solid red;height:150px;font-size:25px;border-radius:8px;background-color:#FFCCCC">
+          <div class="voucher d-flex align-items-center p-2 me-2" style="width:130px;border:1px solid red;height:200px;font-size:25px;border-radius:8px;background-color:#FFCCCC">
             <div id="icon"><i class="fa-solid fa-ticket fa-2xl" style="color: #e00b0b;"></i></div>
-            <div id="voucherDetail" class="ms-4">
-              <form method="post" action="index.php?action=voucher">
-                <input hidden value="<?php echo $row->id ?>">
-                <input hidden value="<?php echo isset($_SESSION['customer_id']) ? $_SESSION['customer_id'] : 0  ?>">
-                <p class="text-danger"> Giảm <?php echo $row->discount ?>%</p>
+            <?php if ($this->checkVoucher($row->id) > 0) { ?>
+              <div id="voucherDetail" class="ms-4">
+                <p class="text-danger"> <?php echo $row->ma ?></p>
+                <b>
+                  <p class="text-danger"> Giảm <?php echo $row->discount ?>%</p>
+                </b>
                 <p class="text-danger">Cho đơn hàng từ <?php echo number_format($row->dk_hoadon) ?>đ</p>
-                <button type="submit" class="btn btn-danger mb-2 float-end">Lưu</button>
-              </form>
-            </div>
+                <i style="font-size:12px">Thời gian: <?php echo $row->timeStart ?> - <?php echo $row->timeEnd ?></i>
+                <button class="btn btn-danger mb-2 float-end">Đã lưu</button>
+              </div>
+            <?php } else { ?>
+              <div id="voucherDetail" class="ms-4">
+                <form method="post" action="index.php?action=voucher">
+                  <input hidden value="<?php echo $row->id ?>" name="idVoucher">
+                  <input hidden name="idCus" value="<?php echo isset($_SESSION['customer_id']) ? $_SESSION['customer_id'] : 0  ?>">
+                  <p class="text-danger"> <?php echo $row->ma ?></p>
+                  <b>
+                    <p class="text-danger"> Giảm <?php echo $row->discount ?>%</p>
+                  </b>
+                  <p class="text-danger">Cho đơn hàng từ <?php echo number_format($row->dk_hoadon) ?>đ</p>
+                  <i style="font-size:12px">Thời gian: <?php echo $row->timeStart ?> - <?php echo $row->timeEnd ?></i>
+                  <button type="submit" class="btn btn-danger mb-2 float-end">Lưu</button>
+
+                </form>
+              </div>
+            <?php } ?>
           </div>
         <?php endforeach ?>
       </div>

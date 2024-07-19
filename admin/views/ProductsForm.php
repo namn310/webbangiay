@@ -17,6 +17,25 @@ $this->layoutPath = "Layout.php";
                 </div>
                 <!-- end rows -->
                 <!-- rows -->
+                <?php $ListShop = $this->getListShop() ?>
+                <div class="row" style="margin-top:5px;">
+                    <div class="col-md-2">Shop</div>
+                    <div class="col-md-10">
+                        <select required name="shop_id" class="form-control">
+                            <?php if (!isset($record->shop_id) && $record->shop_id < 1) { ?>
+                                <option selected>Chọn shop</option>
+                            <?php } ?>
+                            <?php foreach ($ListShop as $list) : ?>
+                                <option <?php
+                                        if (isset($record->shop_id) && $record->shop_id == $list->id) :
+                                        ?> selected <?php endif ?> value="<?php echo $list->id ?>"><?php echo $this->getNameShop($list->id) ?></option>
+                            <?php endforeach ?>
+
+                        </select>
+                    </div>
+                </div>
+                <!-- end rows -->
+                <!-- rows -->
                 <div class="row" style="margin-top:5px;">
                     <div class="col-md-2">Price</div>
                     <div class="col-md-10">

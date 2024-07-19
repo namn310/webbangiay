@@ -86,7 +86,17 @@ trait VoucherModel
         $timestart = $_POST['timestart'];
         $timeend = $_POST['timeend'];
         $conn = Connection::getInstance();
-        $query = $conn->prepare("update vouchers set ma=:ma,soluong=:count,dk_hoadon=:OrderCon,timeStart=:start,timeEnd=:end,dk_soluong=:CountCon,discount=:discount,description=:des");
-        $query->execute(['ma' => $ma, 'count' => $count, 'OrderCon' => $OrderCon, 'start' => $timestart, 'end' => $timeend, 'CountCon' => $CountCon, 'discount' => $discount, 'des' => $content]);
+        $query = $conn->prepare("update vouchers set ma=:ma,soluong=:count,dk_hoadon=:OrderCon,timeStart=:start,timeEnd=:end,dk_soluong=:CountCon,discount=:discount,description=:des where id=:id");
+        $query->execute(['ma' => $ma, 'count' => $count, 'OrderCon' => $OrderCon, 'start' => $timestart, 'end' => $timeend, 'CountCon' => $CountCon, 'discount' => $discount, 'des' => $content, 'id' => $id]);
+    }
+    public function outDateVoucher($id)
+    {
+        $conn = Connection::getInstance();
+        $conn->query("update vouchers set status=0 where id=$id");
+    }
+    public function resetVoucher($id)
+    {
+        $conn = Connection::getInstance();
+        $conn->query("update vouchers set status=1 where id=$id");
     }
 }

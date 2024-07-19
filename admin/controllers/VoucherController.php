@@ -13,6 +13,18 @@ class VoucherController extends Controller
         //lay danh sach cac ban ghi co phan trang
         $data = $this->modelRead($recordPerPage);
         //goi view, truyen du lieu ra view
+        $conn = Connection::getInstance();
+        $query = $conn->query("select * from vouchers");
+        foreach ($query->fetchAll() as $row) {
+            $now = new DateTime();
+            $timeend = new DateTime($row->timeEnd);
+            $timestart = new DateTime($row->timeStart);
+            if ($now > $timeend || $now < $timestart) {
+                $this->outDateVoucher($row->id);
+            } else {
+                $this->resetVoucher($row->id);
+            }
+        }
         $this->loadView('VoucherView.php', ["data" => $data, "numPage" => $numPage]);
     }
     public function create()
